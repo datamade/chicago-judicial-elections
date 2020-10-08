@@ -35,70 +35,70 @@ data/precincts/judicial_republican_primary_%.csv :
 data/precincts/judicial_general_%.csv : 
 	python scripts/boe.py $< --year=$* --type=general > $@
 
-data/demographics/ward_2020_primary.geojson : wards_2012.geojson
+data/demographics/ward_2020_primary.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2018 > $@
 
-data/demographics/ward_2018_primary.geojson : wards_2012.geojson
+data/demographics/ward_2018_primary.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2018 > $@
 
-data/demographics/ward_2018_general.geojson : wards_2012.geojson
+data/demographics/ward_2018_general.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2018 > $@
 
-data/demographics/ward_2016_primary.geojson : wards_2012.geojson
+data/demographics/ward_2016_primary.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2016 > $@
 
-data/demographics/ward_2016_general.geojson : wards_2012.geojson
+data/demographics/ward_2016_general.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2016 > $@
 
-data/demographics/ward_2014_primary.geojson : wards_2012.geojson
+data/demographics/ward_2014_primary.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2014 > $@
 
-data/demographics/ward_2014_general.geojson : wards_2012.geojson
+data/demographics/ward_2014_general.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2014 > $@
 
-data/demographics/ward_2012_primary.geojson : wards_2002.geojson
+data/demographics/ward_2012_primary.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2012 > $@
 
-data/demographics/ward_2012_general.geojson : wards_2012.geojson
+data/demographics/ward_2012_general.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2012 > $@
 
-data/demographics/ward_2010_primary.geojson : wards_2002.geojson
+data/demographics/ward_2010_primary.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@
 
-data/demographics/ward_2010_general.geojson : wards_2002.geojson
+data/demographics/ward_2010_general.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@
 
-data/demographics/ward_2008_primary.geojson : wards_2002.geojson
+data/demographics/ward_2008_primary.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@
 
-data/demographics/ward_2008_general.geojson : wards_2002.geojson
+data/demographics/ward_2008_general.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@
 
-data/demographics/ward_2006_primary.geojson : wards_2002.geojson
+data/demographics/ward_2006_primary.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@
 
-data/demographics/ward_2006_general.geojson : wards_2002.geojson
+data/demographics/ward_2006_general.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo.py 2010 > $@	
 
-data/demographics/ward_2004_primary.geojson : wards_2002.geojson
+data/demographics/ward_2004_primary.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@
 
-data/demographics/ward_2004_general.geojson : wards_2002.geojson
+data/demographics/ward_2004_general.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@
  
-data/demographics/ward_2002_primary.geojson : wards_1998.geojson
+data/demographics/ward_2002_primary.geojson : wards/wards_1998.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@
 
-data/demographics/ward_2002_general.geojson : wards_2002.geojson
+data/demographics/ward_2002_general.geojson : wards/wards_2002.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@	
 
-data/demographics/ward_2000_primary.geojson : wards_1998.geojson
+data/demographics/ward_2000_primary.geojson : wards/wards_1998.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@
 
-data/demographics/ward_2000_general.geojson : wards_1998.geojson
+data/demographics/ward_2000_general.geojson : wards/wards_1998.geojson
 	cat $< | python scripts/demo_sf1.py 2000 > $@	
 
-wards_1998.geojson : ward1998.shp
+wards/wards_1998.geojson : ward1998.shp
 	ogr2ogr -f GeoJSON -t_srs crs:84 $@ $<
 
 %.shp : %.zip
@@ -108,8 +108,8 @@ wards_1998.geojson : ward1998.shp
 ward1998.zip : 
 	wget -O $@ "https://www.lib.uchicago.edu/e/collections/maps/ward1998.zip"
 
-wards_2012.geojson :
+wards/wards_2012.geojson :
 	wget -O $@ "https://data.cityofchicago.org/api/geospatial/sp34-6z76?method=export&format=GeoJSON"
 
-wards_2002.geojson :
+wards/wards_2002.geojson :
 	wget -O $@ "https://data.cityofchicago.org/api/geospatial/xt4z-bnwh?method=export&format=GeoJSON"
