@@ -3,13 +3,13 @@ Chicago Judicial Elections
 
 Data and Scripts to Acquire Data for Chicago Judicial Elections
 
-# Data Manifest
+## Data Manifest
 - [./data/wards/*.csv](./data/wards) : CSV Spreadsheets of Judicial Race Results at the Ward Level
 - [./data/demographics/*.csv](./data/demographics) : CSV Spreadsheets of Racial, Ethnic, and Income Demographics at Ward Level for Each Election
 - [./data/demographics/*.geojson](./data/demographics) : GeoJSON Files of Racial, Ethnic, and Income Demographics at Ward Level for Each Election. Good for mapping
 
 
-# Sources
+## Sources
 The election results all come for the [Chicago Board of Elections](https://chicagoelections.gov/en/election-results.html).
 
 The Census data comes from the US Census's data API. We use the nearest available year for each election.
@@ -30,24 +30,24 @@ Census data sources
 | 2002 | 2000 SF1         |
 | 2000 | 2000 SF1         |
 
-# Methodology
+## Methodology
 
 See this [project for the methodology of calculating the demographics for each ward](https://github.com/datamade/ward-demographics#methodology).
 
 
-# To Run
-## System requirements
+## To Run
+### System requirements
 - ogr2ogr
 - python3
 - make
 - wget
 
-## Install
+### Install
 ```bash
 > pip install -r requirements.txt
 ```
 
-## Build data
+### Build data
 ```bash
 > make all
 ```
