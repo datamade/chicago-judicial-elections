@@ -44,7 +44,7 @@ for geography in tqdm.tqdm(geographies['features']):
             geography_data[var] += (data[var] * weight)
         total_tracts += weight 
 
-    geography_data = {k: int(v) for k, v in geography_data.items() if v is not None}
+    geography_data = {(READABLE_VARS[k] or k): int(v) for k, v in geography_data.items() if v is not None}
     geography_data['number of tracts'] = total_tracts
 
     geography['properties'].update(geography_data)
