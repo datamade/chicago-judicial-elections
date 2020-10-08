@@ -5,8 +5,8 @@ Data and Scripts to Acquire Data for Chicago Judicial Elections
 
 # Data Manifest
 - [./data/wards/*.csv](./data/wards) : CSV Spreadsheets of Judicial Race Results at the Ward Level
-- [/data/demographics/*.csv](./data/demographics) : CSV Spreadsheets of Racial, Ethnic, and Income Demographics at Ward Level for Each Election
-- [/data/demographics/*.geojson](./data/demographics) : GeoJSON Files of Racial, Ethnic, and Income Demographics at Ward Level for Each Election. Good for mapping
+- [./data/demographics/*.csv](./data/demographics) : CSV Spreadsheets of Racial, Ethnic, and Income Demographics at Ward Level for Each Election
+- [./data/demographics/*.geojson](./data/demographics) : GeoJSON Files of Racial, Ethnic, and Income Demographics at Ward Level for Each Election. Good for mapping
 
 
 # Sources
