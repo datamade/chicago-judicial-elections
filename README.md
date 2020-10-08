@@ -4,8 +4,10 @@ Chicago Judicial Elections
 Data and Scripts to Acquire Data for Chicago Judicial Elections
 
 # Data Manifest
-- /data/wards : CSV Spreadsheets of Judicial Race Results at the Ward Level
-- /data/demographics : CSV Spreadsheets of Racial, Ethnic, and Income Demographics at Ward Level for Each Election
+- [./data/wards/*.csv](./data/wards) : CSV Spreadsheets of Judicial Race Results at the Ward Level
+- [/data/demographics/*.csv](./data/demographics) : CSV Spreadsheets of Racial, Ethnic, and Income Demographics at Ward Level for Each Election
+- [/data/demographics/*.geojson](./data/demographics) : GeoJSON Files of Racial, Ethnic, and Income Demographics at Ward Level for Each Election. Good for mapping
+
 
 # Sources
 The election results all come for the [Chicago Board of Elections](https://chicagoelections.gov/en/election-results.html).
