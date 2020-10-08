@@ -30,6 +30,24 @@ Census data sources
 | 2002 | 2000 SF1         |
 | 2000 | 2000 SF1         |
 
-## Methodology
+# Methodology
 
 See this [project for the methodology of calculating the demographics for each ward](https://github.com/datamade/ward-demographics#methodology).
+
+
+# To Run
+## System requirements
+- ogr2ogr
+- python3
+- make
+- wget
+
+## Install
+```bash
+> pip install -r requirements.txt
+```
+
+## Build data
+```bash
+> make all
+```
