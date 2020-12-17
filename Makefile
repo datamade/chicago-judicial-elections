@@ -1,6 +1,6 @@
 .DELETE_ON_ERROR :
 
-GENERAL_YEARS = 2018 2016 2014 2012 2010 2008 2006 2004 2002 2000
+GENERAL_YEARS = 2020 2018 2016 2014 2012 2010 2008 2006 2004 2002 2000
 PRIMARY_YEARS = 2020 $(GENERAL_YEARS)
 
 DEMOCRATIC_PRIMARIES = $(patsubst %,data/wards/judicial_democratic_primary_%.csv,$(PRIMARY_YEARS))
@@ -34,6 +34,9 @@ data/precincts/judicial_republican_primary_%.csv :
 
 data/precincts/judicial_general_%.csv : 
 	python scripts/boe.py $< --year=$* --type=general > $@
+
+data/demographics/ward_2020_general.geojson : wards/wards_2012.geojson
+	cat $< | python scripts/demo.py 2018 > $@
 
 data/demographics/ward_2020_primary.geojson : wards/wards_2012.geojson
 	cat $< | python scripts/demo.py 2018 > $@
