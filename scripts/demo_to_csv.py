@@ -13,7 +13,12 @@ writer = csv.DictWriter(sys.stdout,
                                     'Aggregate household income in the past 12 months',
                                     'Total households',
                                     'mean household income',
-                                    'number of tracts'),
+                                    'number of tracts', 
+                                    'Native Born, Male, Over 18',
+                                    'Naturalized U.S. Citizen, Male, Over 18',
+                                    'Native Born, female, Over 18',
+                                    'Naturalized U.S. Citizen, Female, Over 18',
+                                    ),
                         extrasaction='ignore')
 writer.writeheader()
 

@@ -23,7 +23,11 @@ VARS = {'B03002_001E': 0, # total population,
         'B03002_006E': 0, # Not Hispanic or Latino asian
         'B03002_012E': 0, # Hispanic or Latino
         'B25120_001E': 0, # Aggregate household income in the past 12 months
-        'B19001_001E': 0, # Households
+        'B19001_001E': 0, # Households,
+        'B05003_009E': 0, # Native Born, Male, Over 18
+        'B05003_011E': 0, # Naturalized U.S. Citizen, Male, Over 18
+        'B05003_020E': 0, # Native Born, female, Over 18
+        'B05003_022E': 0, # Naturalized U.S. Citizen, Female, Over 18       
         }
 
 READABLE_VARS = {'geography number': None,
@@ -35,7 +39,12 @@ READABLE_VARS = {'geography number': None,
                  'B25120_001E': 'Aggregate household income in the past 12 months',
                  'B19001_001E': 'Total households',
                  'mean household income': None,
-                 'number of tracts': None}
+                 'number of tracts': None,
+                 'B05003_009E': 'Native Born, Male, Over 18',
+                 'B05003_011E': 'Naturalized U.S. Citizen, Male, Over 18',
+                 'B05003_020E': 'Native Born, female, Over 18',
+                 'B05003_022E': 'Naturalized U.S. Citizen, Female, Over 18',
+                 }
 
 for geography in tqdm.tqdm(geographies['features']):
     geography_data = VARS.copy()
@@ -56,7 +65,7 @@ for geography in tqdm.tqdm(geographies['features']):
     except ZeroDivisionError:
         geography_data['mean household income'] = None
         
-    geography_data = {(READABLE_VARS[k] or k): int(v) for k, v in geography_data.items() if v is not None}
+    geography_data = {(READABLE_VARS.get(k) or k): int(v) for k, v in geography_data.items() if v is not None}
     geography_data['number of tracts'] = total_tracts
 
     geography['properties'].update(geography_data)
