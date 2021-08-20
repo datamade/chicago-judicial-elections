@@ -7,10 +7,6 @@ from scrapelib.cache import FileCache
 from census_area import Census
 
 s = scrapelib.Scraper(raise_errors=False, requests_per_minute=0)
-cache = FileCache('cache')
-
-s.cache_storage = cache
-s.cache_write_only = False
 
 API_KEY = 'ac94ba69718a7e1da4f89c6d218b8f6b5ae9ac49'
 
